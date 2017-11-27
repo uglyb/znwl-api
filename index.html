@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>智能物联平台文档</title>
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="vue.css">
+  <style>
+    .cover {
+      background: linear-gradient(to left bottom, hsl(129, 100%, 85%) 0%,hsl(106, 100%, 85%) 100%) !important;
+    }
+    section.cover h1 span{
+      color: #51362a!important;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+<script>
+  window.$docsify = {
+    name: '智能物联平台文档',
+    repo: '',
+    loadSidebar: true,
+    maxLevel: 4,
+    subMaxLevel: 4,
+    coverpage: true,
+    autoHeader: true,
+    auto2top: true,
+    search: {
+      paths: 'auto', // or 'auto'
+      placeholder: '搜索',
+      noData: '找不到结果！'
+    }
+  }
+</script>
+<script src="docsify.min.js"></script>
+<script src="search.js"></script>
+<script src="prism-json.min.js"></script>
+</html>

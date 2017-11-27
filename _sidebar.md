@@ -1,0 +1,13 @@
+- 智能物联平台API接口
+  - [接入说明](/index)
+
+  - 接口定义
+    - [基础服务](/01_basic)
+    - [APP首页](/02_home)
+    - [房间](/03_room)
+    - [场景](/04_scene)
+    - [设备控制](/05_device_control)
+    - [个人中心](/06_mine)
+  - [附录](/appendix)
+  - Change log
+- 菜单定义
