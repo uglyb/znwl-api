@@ -1,36 +1,43 @@
 #### 房间列表
 获取网关下的房间列表
 
-**接口地址:**  `api/v1/activity`
+**接口地址:**  `api/v1/room/list`
 
 **请求参数**
 
-|  参数  | 是否可选 | 参数说明 |
-|--------|----------|----------|
-| pageNo | 否       | 分页码   |
+|    参数   | 是否可选 | 参数说明 |
+|-----------|----------|----------|
+| gatewayId | 否       | 网关Id   |
 
 
-** 响应参数 **
+**响应参数**
 
-|参数| 参数类型 |是否可选 | 参数说明 |
-|---|:---:|----|---|
-|-| array | 否 | 数组 |
-|rowId| int | 否| 活动唯一标识|
-|title| string | 否 | 活动标题|
-|typeName| string | 否| 活动类型： `地产、楼盘`|
-|thumb| string | 否 | 缩略图|
-|beginTime| string | 否 | 活动开始时间，`格式:yyyy-MM-dd HH:mm:ss`, 移动端删除`:ss` |
-|address| string | 否| 活动地址 |
+| 参数             | 参数类型 | 是否可选 | 参数说明       |
+| ---              | :---:    | ----     | ---            |
+| -                | array    | 否       | 数组           |
+| rowId            | int      | 否       | 唯一标识       |
+| name             | string   | 否       | 房间名称       |
+| thumb            | string   | 否       | 房间背景图     |
+| deviceCount      | int      | 否       | 设备总数       |
+| workingCount     | int      | 否       | 工作中设备数   |
+| pmValue          | string   | 是       | PM2.5传感值    |
+| co2Value         | string   | 是       | 二氧化碳传感值 |
+| temperatureValue | string   | 是       | 温度值         |
+| humidityValue    | string   | 是       | 湿度值         |
 
 ** 响应示例 **
 
 ``` json
 [{
-  title: "皇家游轮会员活动",
-  typeName: "地产",
-  thumb: "活动图.png",
-  beginTime: "2017-06-07 14:48:20",
-  address: "郁金香路30号吉美思大厦701"
+  rowId:1,
+  name:"客厅",
+  thumb:"dkglddgdkssgsgag.png",
+  deviceCount:6,
+  workingCount:5,
+  pmValue:"157ug/m³",
+  co2Value:"640ppm",
+  temperatureValue:"24℃",
+  humidityValue:"60%"
 }]
 ```
 
@@ -39,48 +46,61 @@
 #### 房间详情
 获取房间详情，展示温、湿度，PM2.5,二氧化碳浓度等传感信息；房间设备列表。
 
-**接口地址:**  `api/v1/activity/detail`
+**接口地址:**  `api/v1/room/detail`
 
 **请求参数**
 
-|参数| 是否可选 | 参数说明 |
-|---|---|---|
-|rowId| 否 | 活动Id |
+|  参数 | 是否可选 | 参数说明 |
+|-------|----------|----------|
+| rowId | 否       | 房间Id   |
 
 ** 响应参数 **
 
-|参数| 参数类型 |是否可选 | 参数说明 |
-|---|:---:|----|---|
-|rowId| int | 否| 活动唯一标识|
-|title| string | 否 | 活动标题|
-|thumb| string | 否 | 缩略图|
-|beginTime| string | 否 | 活动开始时间，`格式:yyyy-MM-dd HH:mm:ss`, 移动端删除`:ss` |
-|endTime| string| 否| 活动结束时间，`格式:yyyy-MM-dd HH:mm:ss`, 移动端删除`:ss`|
-|address| string | 否| 活动地址 |
-|content| string | 否| 活动介绍内容 |
-|canJoin| string | 否| 是否可以报名，`0：不可报名，1：可报名` |
-|cantJoinReason | string | 是 | 不可报名说明 |
-|closeJoin | string | 否 | 是否截止报名 |
-|lon | decimal | 否 | 坐标经度 |
-|lat | decimal | 否 | 坐标维度 |
-|isJoin| string | 否| 是否已报名，`0：未报名，1：已报名`|
+| 参数                 | 参数类型 | 是否可选 | 参数说明                                     |
+| ---                  | :---:    | ----     | ---                                          |
+| rowId                | int      | 否       | 唯一标识                                     |
+| name                 | string   | 否       | 房间名称                                     |
+| thumb                | string   | 否       | 房间背景图                                   |
+| deviceCount          | int      | 否       | 设备总数                                     |
+| workingCount         | int      | 否       | 工作中设备数                                 |
+| pmValue              | string   | 是       | PM2.5传感值                                  |
+| co2Value             | string   | 是       | 二氧化碳传感值                               |
+| temperatureValue     | string   | 是       | 温度值                                       |
+| humidityValue        | string   | 是       | 湿度值                                       |
+| device               | array    | 是       | 设备                                         |
+| device.id            | int      | 否       | 设备 ID                                      |
+| device.name          | string   | 否       | 设备名称                                     |
+| device.roomName      | string   | 否       | 所属房间                                     |
+| device.icon          | string   | 否       | 设备图标                                     |
+| device.status        | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
+| device.workingMode   | string   | 否       | 设备当前工作模式，仅当设备在线时有值         |
+| device.workingStatus | string   | 否       | 设备当前工作状态，仅当设备在线时有值         |
+| device.model         | string   | 否       | 设备型号                                     |
+
 
 ** 响应示例 **
 
 ``` json
 {
-  title: "皇家游轮会员活动",
-  thumb: "活动图.png",
-  beginTime: "2017-06-07 14:48:20",
-  endTime: "2017-06-09 14:48:20",
-  address: "郁金香路30号吉美思大厦701",
-  content: "活动内容",
-  canJoin: "0",
-  cantJoinReason: "截止报名",
-  closeJoin: "1",
-  isJoin: "0",
-  lon: 2847376366734.114747
-  lat: 178364729382.2251
+  rowId:1,
+  name:"客厅",
+  thumb:"dkglddgdkssgsgag.png",
+  deviceCount:6,
+  workingCount:5,
+  pmValue:"157ug/m³",
+  co2Value:"640ppm",
+  temperatureValue:"24℃",
+  humidityValue:"60%",
+  device:[{
+        id:111,
+        name:"空调",
+        roomName:"客厅",
+        icon:"lkdgjlskdjgldsj.png",
+        status:0,
+        workingMode:"制热",
+        workingStatus:"26℃",
+        mode:"KDH-2000"
+    }]
 }
 ```
 
