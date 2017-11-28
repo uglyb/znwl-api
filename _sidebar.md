@@ -6,6 +6,7 @@
     - [APP首页](/02_home)
     - [房间](/03_room)
     - [场景](/04_scene)
+    - [设备](/07_device)
     - [设备控制](/05_device_control)
     - [个人中心](/06_mine)
   - [附录](/appendix)
