@@ -22,175 +22,176 @@
 ```
 ---
 
-#### 首页概览
-返回首页概览信息
+#### 首页接口
+返回我的首页场景模式、常用设备、设备运行数量
 
-**接口地址:**  `api/v1/banner/index`
-
-**请求参数**
-
-`无`
-
-** 响应参数 **
-
-| 参数        | 参数类型 | 是否可选 | 参数说明                                                                                   |
-| ---         | :---:    | ----     | ---                                                                                        |
-| -           | array    | 是       | 轮播广告集合                                                                               |
-| pic         | string   | 否       | 轮播图片                                                                                   |
-| drillable   | string   | 否       | 是否可钻取：0:false,1:true                                                                 |
-| drillModule | string   | 否       | 钻取模块，[见附录](/appendix?id=app%e9%92%bb%e5%8f%96%e6%a8%a1%e5%9d%97%e5%ae%9a%e4%b9%89) |
-| drillType   | int      | 否       | 钻取类型(0：列表，1：明细)                                                                 |
-| drillValue  | string   | 否       | 钻取参数                                                                                   |
-
-** 响应示例 **
-
-``` json
-[{
-  pic: "banner/hfhga748377bvg.png",
-  drillable: "1",
-  drillModule: "10001",
-  drillType: 1,
-  drillValue: "1"
-}]
-```
-
----
-
-#### 场景模式
-
-查询用户首页场景列表
-
-**接口地址:**  `api/v1/scene/index`
+**接口地址:**  `api/v1/home/index`
 
 **请求参数**
 
-`无`
+|    参数   | 是否可选 | 参数说明 |
+|-----------|----------|----------|
+| gatewayId | 否       | 网关 ID  |
 
-** 响应参数 **
+**响应参数**
 
-|参数| 参数类型 |是否可选 | 参数说明 |
-|---|:---:|----|---|
-|-| array | 是| 数组|
-|moduleCode| string | 否 | 模块编码 |
-|moduleName| string | 否 | 模块名称|
-|modulePhoto| string | 否 | 模块图片|
-|moduleMethod| string | 否 | 模块方法 |
+| 参数                 | 参数类型 | 是否可选 | 参数说明                                     |
+| ---                  | :---:    | ----     | ---                                          |
+| workingDeviceCount   | int      | 否       | 工作中设备数量                               |
+| scene                | array    | 否       | 我的情景模式数组                             |
+| scene.id             | int      | 否       | 情景id                                       |
+| scene.icon           | string   | 否       | 情景图标                                     |
+| scene.name           | string   | 否       | 情景名称                                     |
+| scene.status         | int      | 否       | 情景状态，0：默认状态 1：运行状态            |
+| device               | array    | 否       | 常用设备数组                                 |
+| device.id            | int      | 否       | 设备 ID                                      |
+| device.name          | string   | 否       | 设备名称                                     |
+| device.roomName      | string   | 否       | 所属房间                                     |
+| device.icon          | string   | 否       | 设备图标                                     |
+| device.status        | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
+| device.workingMode   | string   | 否       | 设备当前工作模式，仅当设备在线时有值         |
+| device.workingStatus | string   | 否       | 设备当前工作状态，仅当设备在线时有值         |
 
-** 响应示例 **
-
-``` json
-[{
-  moduleCode: "company",
-  moduleName: "公司动态",
-  modulePhoto: "module/hfhga748377bvg.png",
-  moduleMethod: "CompanyViewController"
-}]
-```
-
----
-
-#### 常用设备
-返回用户常用设备列表
-
-**接口地址:**  `api/v1/news/index`
-
-**请求参数**
-
-`无`
-
-** 响应参数 **
-
-|参数| 参数类型 |是否可选 | 参数说明 |
-|---|:---:|----|---|
-|-| array | 是| 数组|
-|title| string | 否 | 模块编码 |
-|rowId| int | 否 | 投条唯一标识|
-
-** 响应示例 **
-
-``` json
-[{
-  title: "洛德德瑞基金二期上线啦！",
-  rowId: 1
-}]
-```
-!> 今日投条：在首页显示且是热门的资讯
-
----
-
-
-#### 常用设备添加
-添加用户常用设备
-
-**接口地址:**  `api/v1/middleAd/index`
-
-**请求参数**
-
-`无`
-
-** 响应参数 **
-
-|参数| 参数类型 |是否可选 | 参数说明 |
-|---|:---:|----|---|
-| type | int | 否| 类型(3:3张广告，5：5张广告位)|
-|item | array | 否 | 广告集合 |
-|item.pic| string | 否 | 图片|
-|item.drillable| string| 否| 是否可钻取 |
-|item.drillModule| string| 是| 钻取模块，[见附录](/appendix?id=app%e9%92%bb%e5%8f%96%e6%a8%a1%e5%9d%97%e5%ae%9a%e4%b9%89)|
-|item.drillType| int| 是| 钻取类型(0：列表，1：明细) |
-|item.drillValue| string| 是| 钻取值|
 
 ** 响应示例 **
 
 ``` json
 {
-  type: 3,
-  item: [
-    {
-      pic: "hfhga748377bvg.png",
-      drillable: "1",
-      drillModule: "1002",
-      drillType: 1,
-      drillValue: "12"
-    }
-  ]
+  workingDeviceCount:3,
+  scene:[{
+        id:101,
+        icon:"1k4ljldksjlfjdl.png",
+        name:"上班",
+        status:0
+    }],
+  device:[{
+        id:111,
+        name:"空调",
+        roomName:"客厅",
+        icon:"lkdgjlskdjgldsj.png",
+        status:0,
+        workingMode:"制热",
+        workingStatus:"26℃"
+    }]
 }
 ```
+
 ---
 
+
+#### 添加常用设备
+添加用户常用设备
+
+**接口地址:**  `api/v1/device/userAdd`
+
+**请求参数**
+
+|   参数   | 是否可选 | 参数说明 |
+|----------|----------|----------|
+| deviceId | 否       | 设备 ID  |
+
+** 响应参数 **
+
+`无`
+
+** 响应示例 **
+
+`无`
+
+---
+
+#### 移除常用设备
+移除用户常用设备
+
+**接口地址:**  `api/v1/device/userRemove`
+
+**请求参数**
+
+|   参数   | 是否可选 | 参数说明 |
+|----------|----------|----------|
+| deviceId | 否       | 设备 ID  |
+
+** 响应参数 **
+
+`无`
+
+** 响应示例 **
+
+`无`
+
+---
+
+#### 设备分类筛选
+获取设备分类筛选条件
+
+**接口地址:**  `api/v1/device/filterList`
+
+**请求参数**
+
+|    参数   | 是否可选 |    参数说明    |
+|-----------|----------|----------------|
+| gatewayId | 否       | 网关 ID        |
+
+** 响应参数 **
+
+| 参数        | 参数类型 | 是否可选 | 参数说明 |
+| ---         | :---:    | ----     | ---      |
+| room        | array    | 否       | 房间     |
+| room.rowId  | int      | 否       | 唯一标识 |
+| room.name   | string   | 否       | 房间名称 |
+| group       | array    | 否       | 分组     |
+| group.rowId | int      | 否       | 唯一标识 |
+| group.name  | string   | 否       | 组名称   |
+
+** 响应示例 **
+
+``` json
+{
+  room:[{
+      rowId:1,
+      name:"房间一"
+    }],
+  group:[{
+      rowId:1,
+      name:"灯"
+    }]
+}
+```
+
+---
 
 #### 设备列表
 获取所选网关下所有设备列表
 
-**接口地址:**  `api/v1/fund/index`
+**接口地址:**  `api/v1/device/list`
 
 **请求参数**
 
-`无`
+|    参数   | 是否可选 |    参数说明    |
+|-----------|----------|----------------|
+| gatewayId | 否       | 网关 ID        |
+| roomId    | 是       | 房间 ID,默认-1 |
+| groupId   | 是       | 分组 ID,默认-1 |
 
 ** 响应参数 **
 
-|参数| 参数类型 |是否可选 | 参数说明 |
-|---|:---:|----|---|
-| - | array | 是| 数组 |
-|rowId | int | 否| 唯一标识|
-|type | int | 否 | 基金类型（0:股权，1：债权） |
-|name| string | 否 | 基金名称|
-|tags| string | 否 | 标签，`逗号拆分`|
-|incomeRate | string| 否| 收益率 |
-|investCycle | int| 否| 投资期限，单位：月 |
-|startingAmount | int| 否| 起投金额，单位：万 |
+| 参数     | 参数类型 | 是否可选 | 参数说明                                     |
+| ---      | :---:    | ----     | ---                                          |
+| -        | array    | 是       | 数组                                         |
+| rowId    | int      | 否       | 唯一标识                                     |
+| name     | string   | 否       | 设备名称                                     |
+| icon     | string   | 否       | 设备图标                                     |
+| roomName | string   | 否       | 所属房间                                     |
+| status   | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
 
 ** 响应示例 **
 
 ``` json
 [{
   rowId: 1,
-  type: 0,
-  name: "德瑞1期",
-  tags: "洛德,市场",
-  incomeRate: "2.8%+",
-  investCycle: 12,
-  startingAmount: 120
+  name: "空调",
+  icon: "gdsgksldgkjsl.png",
+  roomName: "房间一",
+  status: 0
 }]
 ```
