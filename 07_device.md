@@ -187,18 +187,20 @@
 
 ** 响应参数 **
 
-| 参数            | 参数类型 | 是否可选 | 参数说明                                     |
-| ---             | :---:    | ----     | ---                                          |
-| -               | array    | 是       | 数组                                         |
-| typeName        | string   | 否       | 设备分类名称                                 |
-| typeCode        | string   | 否       | 设备分类编码                                 |
-| device          | array    | 是       | 设备分组                                     |
-| device.rowId    | int      | 否       | 唯一标识                                     |
-| device.name     | string   | 否       | 设备名称                                     |
-| device.icon     | string   | 否       | 设备图标                                     |
-| device.roomName | string   | 否       | 所属房间                                     |
-| device.status   | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
-| device.model    | string   | 否       | 设备型号                                     |
+| 参数                 | 参数类型 | 是否可选 | 参数说明                                     |
+| ---                  | :---:    | ----     | ---                                          |
+| -                    | array    | 是       | 数组                                         |
+| typeName             | string   | 否       | 设备分类名称                                 |
+| typeCode             | string   | 否       | 设备分类编码                                 |
+| device               | array    | 是       | 设备分组                                     |
+| device.rowId         | int      | 否       | 唯一标识                                     |
+| device.name          | string   | 否       | 设备名称                                     |
+| device.icon          | string   | 否       | 设备图标                                     |
+| device.roomName      | string   | 否       | 所属房间                                     |
+| device.status        | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
+| device.workingMode   | string   | 否       | 设备当前工作模式，仅当设备在线时有值         |
+| device.workingStatus | string   | 否       | 设备当前工作状态，仅当设备在线时有值         |
+| device.model         | string   | 否       | 设备型号                                     |
 
 ** 响应示例 **
 
@@ -212,6 +214,8 @@
           icon: "gdsgksldgkjsl.png",
           roomName: "房间一",
           status: 0,
+          workingMode:"制热",
+          workingStatus:"26℃",
           model:"kdkg-1000"
         }]
 }]
