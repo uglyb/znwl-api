@@ -137,51 +137,18 @@
 #### 用户偏好场景选择
 通过该接口选择用户偏好场景模式，显示在首页
 
-**接口地址：**`api/v1/scene/prod/exchangeDetail`
+**接口地址：**`api/v1/scene/set`
 
 **请求参数**
 
-|参数| 是否可选 | 参数说明 |
-|---|---|---|
-|rowId | 否 | 兑换记录唯一标识 |
+|  参数  | 是否可选 |      参数说明     |
+|--------|----------|-------------------|
+| rowIds | 否       | 首页场景ID,号分隔 |
 
 **响应参数**
 
-|参数| 参数类型 |是否可选 | 参数说明 |
-|---|:---:|----|---|
-|rowId | int | 否 | 兑换记录唯一标识 |
-|voucherCode | string| 否 | 订单编号 |
-|subName | string | 否 | 联系人 |
-|subTel | string | 否| 联系电话 |
-|subAdds | string| 否| 联系地址 |
-|status| string | 否 | 兑换状态，`01:已兑换、02:发货中、03:已完成` |
-|deliveryMode | string | 否 | 领取方式 |
-|expressNo| string | 是 | 快递单号，`非空是显示` |
-|prodId | int | 否 | 商品ID |
-|prodName | string| 否 | 商品名称 |
-|photo | string | 否 | 商品缩略图片 |
-|point | int | 否| 兑换积分 |
-|num | int| 否| 兑换数量 |
+`无`
 
-**响应示例**
-
-```json
-{
-  rowId: 1,
-  voucherCode: "P994836253401",
-  subName: "张三",
-  subTel: "13776668293",
-  subAdds: "郁金香路30号吉美思大厦",
-  status: "01",
-  deliveryMode: "快递配送",
-  expressNo: "快递单号",
-  prodId: 1,
-  prodName: "商品名称",
-  photo: "商品缩略图.png",
-  point: 100,
-  num: 1
-}
-```
 ---
 
 #### 场景执行
