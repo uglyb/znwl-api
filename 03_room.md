@@ -76,6 +76,7 @@
 | device.workingMode   | string   | 否       | 设备当前工作模式，仅当设备在线时有值         |
 | device.workingStatus | string   | 否       | 设备当前工作状态，仅当设备在线时有值         |
 | device.model         | string   | 否       | 设备型号                                     |
+| device.modelId       | int      | 否       |  设备型号 ID                                             |
 
 
 ** 响应示例 **
@@ -99,7 +100,8 @@
         status:0,
         workingMode:"制热",
         workingStatus:"26℃",
-        mode:"KDH-2000"
+        mode:"KDH-2000",
+        modelId:10
     }]
 }
 ```

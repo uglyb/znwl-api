@@ -68,8 +68,8 @@
 | -          | array    | 否       | 数组     |
 | deviceName | string   | 否       | 设备名称 |
 | deviceId   | int      | 否       | 设备 ID  |
-| orderId    | int      | 否       | 指令ID   |
-| orderName  | string   | 否       | 指令名称 |
+| commandId    | int      | 否       | 指令ID   |
+| commandName  | string   | 否       | 指令名称 |
 
 
 **响应示例**
@@ -79,13 +79,13 @@
   {
     deviceId:1,
     deviceName:"空调",
-    orderId:11,
-    orderName:"启动"
+    commandId:11,
+    commandName:"启动"
   }，{
     deviceId:1,
     deviceName:"空调",
-    orderId:12,
-    orderName:"制热模式"
+    commandId:12,
+    commandName:"制热模式"
   }
 ]
 ```
@@ -117,6 +117,8 @@
 #### 删除场景
 通过该接口删除用户自定义场景
 
+`注意：只可删除用户自定义场景`
+
 **接口地址：** `api/v1/scene/delete`
 
 **请求参数**
@@ -143,7 +145,7 @@
 
 |  参数  | 是否可选 |      参数说明     |
 |--------|----------|-------------------|
-| rowIds | 否       | 首页场景ID,号分隔 |
+| rowIds | 否       | 场景ID `字符串以,号分隔` |
 
 **响应参数**
 
@@ -151,8 +153,14 @@
 
 ---
 
-#### 场景执行
-通过该接口选择执行场景
+#### 场景执行 `（服务端透传）`
+通过该接口执行选择的场景
+
+>场景执行流程:
+
+    1、客户端通过 http 请求接口，发起场景执行命令，接口会返回场景关联的设备指令值给 app ，同时接口会把场景下的设备控制命令组装发送至设备网关。
+
+    2、网关在处理完控制指令之后，会调用推送接口，把执行结果透传给 app.
 
 **接口地址：** `api/v1/scene/exec`
 
@@ -164,6 +172,32 @@
 
 **响应参数**
 
-`无`
+| 参数        | 参数类型 | 是否可选 | 参数说明 |
+| ---         | :---:    | ----     | ---      |
+| -           | array    | 否       | 数组     |
+| deviceName  | string   | 否       | 设备名称 |
+| deviceId    | int      | 否       | 设备 ID  |
+| deviceModel | string   | 否       | 设备型号 |
+| commandId     | int      | 否       | 指令ID   |
+| commandName   | string   | 否       | 指令名称 |
 
+**响应示例**
+
+```json
+[
+  {
+    deviceId:1,
+    deviceName:"空调",
+    deviceModel:"0301",
+    commandId:11,
+    commandName:"启动"
+  }，{
+    deviceId:1,
+    deviceName:"空调",
+    deviceModel:"0301"
+    commandId:12,
+    commandName:"制热模式"
+  }
+]
+```
 ---

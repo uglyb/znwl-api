@@ -22,7 +22,8 @@
 | icon     | string   | 否       | 设备图标                                     |
 | roomName | string   | 否       | 所属房间                                     |
 | status   | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
-| model    | string   | 否       | 设备型号                                     |
+| deviceModel    | string   | 否       | 设备型号                                     |
+| deviceModelId  | int      | 否       | 设备型号 ID                                             |
 
 
 ** 响应示例 **
@@ -34,7 +35,8 @@
   icon: "gdsgksldgkjsl.png",
   roomName: "房间一",
   status: 0,
-  model:"kdkg-1000"
+  deviceModel:"kdkg-1000",
+  deviceModelId:101
 }]
 ```
 ---
@@ -42,7 +44,7 @@
 #### 设备分类筛选
 获取设备分类筛选条件
 
-**接口地址:**  `api/v1/device/filterList`
+**接口地址:**  `api/v1/device/filter/list`
 
 **请求参数**
 
@@ -80,13 +82,13 @@
 #### 设备指令动作
 通过该接口获取设备指令列表
 
-**接口地址：**`api/v1/device/orderList`
+**接口地址：**`api/v1/device/command/list`
 
 **请求参数**
 
 |     参数    | 是否可选 | 参数说明 |
 |-------------|----------|----------|
-| deviceModel | 否       | 设备型号 |
+| modelId | 否       |  设备型号ID |
 
 **响应参数**
 
@@ -94,7 +96,7 @@
 | ---       | :---:    | ----     | ---      |
 | -         | array    | 否       | 指令集合 |
 | rowId     | int      | 否       | 指令 ID  |
-| orderName | string   | 否       | 指令名称 |
+| commandName | string   | 否       | 指令名称 |
 
 
 **响应示例**
@@ -103,10 +105,10 @@
 [
     {
       rowId:1,
-      orderName:"启动"
+      commandName:"启动"
     },{
       rowId:2,
-      orderName:"制热模式"
+      commandName:"制热模式"
     }
 ]
 ```
@@ -177,7 +179,7 @@
 #### 分类设备列表
 通过该接口获取用户分类设备列表
 
-**接口地址:**  `api/v1/device/typeList`
+**接口地址:**  `api/v1/device/class/list`
 
 **请求参数**
 
@@ -201,6 +203,7 @@
 | device.workingMode   | string   | 否       | 设备当前工作模式，仅当设备在线时有值         |
 | device.workingStatus | string   | 否       | 设备当前工作状态，仅当设备在线时有值         |
 | device.model         | string   | 否       | 设备型号                                     |
+| device.modelId       | int      | 否       |  设备型号 id                                             |
 
 ** 响应示例 **
 
@@ -216,7 +219,8 @@
           status: 0,
           workingMode:"制热",
           workingStatus:"26℃",
-          model:"kdkg-1000"
+          model:"kdkg-1000",
+          modelId:10
         }]
 }]
 ```
