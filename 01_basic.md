@@ -3,6 +3,8 @@
 
 **接口地址:**  `api/v1/validCode`
 
+**token 验证:**  `否`
+
 **请求参数**
 
 |参数| 是否可选 | 参数说明 |
@@ -19,6 +21,8 @@
 用户登录APP接口
 
 **接口地址:**  `api/v1/user/login`
+
+**token 验证:**  `否`
 
 **请求参数**
 
@@ -68,6 +72,8 @@
 
 **接口地址:**  `api/v1/user/login/auto`
 
+**token 验证:**  `否`
+
 **请求参数**
 
 |参数| 是否可选 | 参数说明 |
@@ -114,6 +120,8 @@
 用户注册APP接口，提交注册信息
 
 **接口地址:**  `api/v1/user/regist`
+
+**token 验证:**  `否`
 
 **请求参数**
 
@@ -164,6 +172,8 @@
 
 **接口地址：** `api/v1/user/findpwdValid`
 
+**token 验证:**  `否`
+
 **请求参数**
 
 |参数| 是否可选 | 参数说明 |
@@ -181,6 +191,8 @@
 验证手机号，修改密码接口
 
 **接口地址：** `api/v1/user/findpwdUpdate`
+
+**token 验证:**  `否`
 
 **请求参数**
 
@@ -200,6 +212,8 @@
 
 **接口地址：** `api/v1/user/update`
 
+**token 验证:**  `是`
+
 **请求参数**
 
 |参数| 是否可选 | 参数说明 |
@@ -218,6 +232,8 @@
 
 **接口地址：**`api/v1/feedback`
 
+**token 验证:**  `是`
+
 **请求参数**
 
 |参数| 是否可选 | 参数说明 |
@@ -227,3 +243,58 @@
 **响应参数**
 
 `无`
+
+---
+
+#### 获取图标资源包
+通过该接口获取图标资源包
+
+`该接口在应用启动时调用，用于获取图标文件`
+
+
+**接口地址：**`api/v1/icon`
+
+**token 验证:**  `否`
+
+**请求参数**
+
+`无`
+
+**响应参数**
+
+| 参数    | 参数类型 | 是否可选 | 参数说明       |
+| ---     | :---:    | ----     | ---            |
+| version | int      | 否       | 资源包版本号   |
+| resUrl  | string   | 是       | 资源包 URL地址 |
+
+**资源包结构**
+
+- desc.xml
+- iconfolder
+  - icon1.png
+  - icon2.png
+  - icon3.png
+  - icon4.png
+  
+**desc.xml结构定义**
+
+```html
+<res>
+  <item code="icon1">icon1.png</item>
+  <item code="icon2">icon2.png</item>
+  <item code="icon3">icon3.png</item>
+  <item code="icon4">icon4.png</item>
+</res>
+```
+
+!> 图标文件只传文件名称，客户端在使用的时候按落地的路径自己拼接。
+
+** 响应示例 **
+
+``` json
+{
+  version: 1,
+  resUrl: "http://www.baidu.com"
+}
+```
+---

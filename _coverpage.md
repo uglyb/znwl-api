@@ -1,4 +1,4 @@
-![logo](logo.png)
+![logo](logo.jpg)
 
 # 智能物联平台文档
 

@@ -5,6 +5,8 @@
 
 **接口地址:**  `api/v1/device/control/channel`
 
+**token 验证:**  `是`
+
 **请求参数**
 
 |      参数     | 是否可选 | 参数说明 |
@@ -15,18 +17,20 @@
 
 ** 响应参数 **
 
-| 参数               | 参数类型 | 是否可选 | 参数说明                                                                                                         |
-| ---                | :---:    | ----     | ---                                                                                                              |
-| channelInfo        | array    | 是       | 通道数组                                                                                                         |
-| channelInfo.channelNum         | string   | 否       | 通道号                                                                                                           |
-| channelInfo.channelName        | string   | 否       | 通道名称                                                                                                         |
-| channelInfo.channelValue       | string   | 否       | 通道值                                                                                                           |
-| channelInfo.channelStatus      | string   | 否       | 通道状态                                                                                                         |
-| channelInfo.commandType | string   | 否       | 指令类型：Default，Palette，GetPower，Zigbee_485                                                                 |
-| channelInfo.zigbeeType         | string   | 是       | 表示红外设备功能键类型，只有当commandType为`Zigbee_485`时有效；识别功能键，放在界面的哪个区域  。 |
-| command            | array    | 否       | 指令定义                                                                                                         |
-| command.type       | string   | 否       | 指令类型：Default，Palette，GetPower，Zigbee_485                                                                 |
-| command.value      | string   | 否       | 指令值                                                                                                           |
+| 参数                      | 参数类型 | 是否可选 | 参数说明                                                                                          |
+| ---                       | :---:    | ----     | ---                                                                                               |
+| channelInfo               | array    | 是       | 通道数组                                                                                          |
+| channelInfo.channelNum    | string   | 否       | 通道号                                                                                            |
+| channelInfo.channelName   | string   | 否       | 通道名称                                                                                          |
+| channelInfo.channelValue  | string   | 否       | 通道值                                                                                            |
+| channelInfo.channelStatus | string   | 否       | 通道状态                                                                                          |
+| channelInfo.channelIcon   | string   | 否       | 通道图标                                                                                          |
+| channelInfo.commandType   | string   | 否       | 指令类型：Default，Palette，GetPower，Zigbee_485                                                  |
+| channelInfo.zigbeeType    | string   | 是       | 表示红外设备功能键类型，只有当commandType为`Zigbee_485`时有效；识别功能键，放在界面的哪个区域  。 |
+| command                   | array    | 否       | 指令定义                                                                                          |
+| command.type              | string   | 否       | 指令类型：Default，Palette，GetPower，Zigbee_485                                                  |
+| command.value             | string   | 否       | 指令值                                                                                            |
+
 
 
 
@@ -54,6 +58,7 @@
             channelName: "厕所灯",
             channelValue: "1",
             channelStatus: "1",
+            channelIcon:"icon_code1",
             commandType:"Default",
             zigbeeType:"vol+"
         },{
@@ -61,6 +66,7 @@
             channelName: "客厅灯",
             channelValue: "0",
             channelStatus: "1",
+            channelIcon:"icon_code2",
             commandType:"Default",
             zigbeeType:"vol+"
         }
@@ -88,6 +94,8 @@
 `客户端相关设备类型定义，需要与后台一致`
 
 **接口地址:**  `api/v1/device/control/command`
+
+**token 验证:**  `是`
 
 **请求参数**
 
