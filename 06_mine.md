@@ -45,6 +45,10 @@
 
 `无`
 
+**响应示例**
+
+`无`
+
 ---
 
 #### 用户解绑网关
@@ -66,11 +70,45 @@
 
 ---
 
+#### 我的网关列表
+该接口获取我的所有网关列表
+
+**接口地址：**`api/v1/user/gateway/list`
+
+**token 验证:**  `是`
+
+**请求参数**
+
+`无`
+
+**响应参数**
+
+| 参数              | 参数类型 | 是否可选 | 参数说明   |
+| ---               | :---:    | ----     | ---        |
+| gateway           | array    | 是       | 网关       |
+| gateway.id        | int      | 是       | 网关 ID    |
+| gateway.name      | string   | 是       | 名称       |
+| gateway.seq       | string   | 是       | 网关序列号 |
+| gateway.level     | int      | 是       | 网关等级   |
+
+
+** 响应示例 **
+
+``` json
+[{
+  id:101,
+  name:"房间网关",
+  seq:"0x0x0x0x0x0x0x0x",
+  level:0
+}]
+```
+---
+
 
 #### 网关详情
 该接口获取网关详情
 
-**接口地址：**`api/v1/gateway/detail`
+**接口地址：**`api/v1/user/gateway/detail`
 
 **token 验证:**  `是`
 

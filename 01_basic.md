@@ -33,17 +33,17 @@
 
 ** 响应参数 **
 
-| 参数          | 参数类型 | 是否可选 | 参数说明     |
-| ---           | :---:    | ----     | ---          |
-| token         | string   | 否       | 授权token    |
-| rowId         | int      | 否       | 用户ID       |
-| phone         | string   | 否       | 用户手机号   |
-| nickname      | string   | 否       | 用户昵称     |
-| avatar        | string   | 是       | 头像         |
-| gateway       | array    | 是       | 网关         |
-| gateway.id    | int      | 是       | 网关 ID      |
-| gateway.name  | string   | 是       | 名称         |
-| gateway.bgPic | string   | 是       | 项目背景图片 |
+| 参数                  | 参数类型 | 是否可选 | 参数说明     |
+| ---                   | :---:    | ----     | ---          |
+| token                 | string   | 否       | 授权token    |
+| rowId                 | int      | 否       | 用户ID       |
+| phone                 | string   | 否       | 用户手机号   |
+| nickname              | string   | 否       | 用户昵称     |
+| avatar                | string   | 是       | 头像         |
+| project               | array    | 否       | 项目         |
+| project.id            | int      | 否       | 项目ID       |
+| project.name          | string   | 否       | 项目名称     |
+| project.bgPic         | string   | 是       | 项目背景图片 |
 
 
 ** 响应示例 **
@@ -55,9 +55,9 @@
   phone: "137776668399",
   nickname: "张三",
   avatar: "avatar/ahfga12bdc.jpg",
-  gateway:[
+  project:[
     {
-      id:101,
+      id:111,
       name:"东大创客中心",
       bgPic:"pic/ahfga12bdc.jpg"
     }
@@ -83,17 +83,17 @@
 
 ** 响应参数 **
 
-| 参数         | 参数类型 | 是否可选 | 参数说明   |
-| ---          | :---:    | ----     | ---        |
-| token        | string   | 否       | 授权token  |
-| rowId        | int      | 否       | 用户ID     |
-| phone        | string   | 否       | 用户手机号 |
-| nickname     | string   | 否       | 用户昵称   |
-| avatar       | string   | 是       | 头像       |
-| gateway      | array    | 是       | 网关       |
-| gateway.id   | int      | 是       | 网关 ID    |
-| gateway.name | string   | 是       | 名称       |
-| gateway.bgPic | string   | 是       | 项目背景图片 |
+| 参数                  | 参数类型 | 是否可选 | 参数说明     |
+| ---                   | :---:    | ----     | ---          |
+| token                 | string   | 否       | 授权token    |
+| rowId                 | int      | 否       | 用户ID       |
+| phone                 | string   | 否       | 用户手机号   |
+| nickname              | string   | 否       | 用户昵称     |
+| avatar                | string   | 是       | 头像         |
+| project               | array    | 否       | 项目         |
+| project.id            | int      | 否       | 项目ID       |
+| project.name          | string   | 否       | 项目名称     |
+| project.bgPic         | string   | 是       | 项目背景图片 |
 
 
 ** 响应示例 **
@@ -105,9 +105,9 @@
   phone: "137776668399",
   nickname: "张三",
   avatar: "avatar/ahfga12bdc.jpg",
-  gateway:[
+  project:[
     {
-      id:101,
+      id:111,
       name:"东大创客中心",
       bgPic:"pic/ahfga12bdc.jpg"
     }
@@ -133,17 +133,17 @@
 
 **响应参数**
 
-| 参数         | 参数类型 | 是否可选 | 参数说明   |
-| ---          | :---:    | ----     | ---        |
-| token        | string   | 否       | 授权token  |
-| rowId        | int      | 否       | 用户ID     |
-| phone        | string   | 否       | 用户手机号 |
-| nickname     | string   | 否       | 用户昵称   |
-| avatar       | string   | 是       | 头像       |
-| gateway      | array    | 是       | 网关       |
-| gateway.id   | int      | 是       | 网关 ID    |
-| gateway.name | string   | 是       | 名称       |
-| gateway.bgPic | string   | 是       | 项目背景图片 |
+| 参数                  | 参数类型 | 是否可选 | 参数说明     |
+| ---                   | :---:    | ----     | ---          |
+| token                 | string   | 否       | 授权token    |
+| rowId                 | int      | 否       | 用户ID       |
+| phone                 | string   | 否       | 用户手机号   |
+| nickname              | string   | 否       | 用户昵称     |
+| avatar                | string   | 是       | 头像         |
+| project               | array    | 否       | 项目         |
+| project.id            | int      | 否       | 项目ID       |
+| project.name          | string   | 否       | 项目名称     |
+| project.bgPic         | string   | 是       | 项目背景图片 |
 
 
 ** 响应示例 **
@@ -155,9 +155,9 @@
   phone: "137776668399",
   nickname: "张三",
   avatar: "avatar/ahfga12bdc.jpg",
-  gateway:[
+  project:[
     {
-      id:101,
+      id:111,
       name:"东大创客中心",
       bgPic:"pic/ahfga12bdc.jpg"
     }
