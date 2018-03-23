@@ -43,11 +43,22 @@
 
 **响应参数**
 
-`无`
+| 参数          | 参数类型 | 是否可选 | 参数说明     |
+| ---           | :---:    | ----     | ---          |
+| -             | array    | 否       | 项目         |
+| project.id    | int      | 否       | 项目ID       |
+| project.name  | string   | 否       | 项目名称     |
+| project.bgPic | string   | 是       | 项目背景图片 |
 
 **响应示例**
 
-`无`
+``` json
+[{
+  id:111,
+  name:"东大创客中心",
+  bgPic:"pic/ahfga12bdc.jpg"
+}]
+```
 
 ---
 
@@ -66,7 +77,21 @@
 
 **响应参数**
 
-`无`
+| 参数          | 参数类型 | 是否可选 | 参数说明     |
+| ---           | :---:    | ----     | ---          |
+| -             | array    | 否       | 项目         |
+| project.id    | int      | 否       | 项目ID       |
+| project.name  | string   | 否       | 项目名称     |
+| project.bgPic | string   | 是       | 项目背景图片 |
+
+** 响应示例 **
+``` json
+[{
+  id:111,
+  name:"东大创客中心",
+  bgPic:"pic/ahfga12bdc.jpg"
+}]
+```
 
 ---
 
@@ -83,13 +108,13 @@
 
 **响应参数**
 
-| 参数              | 参数类型 | 是否可选 | 参数说明   |
-| ---               | :---:    | ----     | ---        |
-| gateway           | array    | 是       | 网关       |
-| gateway.id        | int      | 是       | 网关 ID    |
-| gateway.name      | string   | 是       | 名称       |
-| gateway.seq       | string   | 是       | 网关序列号 |
-| gateway.level     | int      | 是       | 网关等级   |
+| 参数  | 参数类型 | 是否可选 | 参数说明   |
+| ---   | :---:    | ----     | ---        |
+| -     | array    | 是       | 网关       |
+| id    | int      | 是       | 网关 ID    |
+| name  | string   | 是       | 名称       |
+| seq   | string   | 是       | 网关序列号 |
+| level | int      | 是       | 网关等级   |
 
 
 ** 响应示例 **
