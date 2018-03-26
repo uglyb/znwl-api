@@ -116,6 +116,17 @@
 | action.deviceId | int      | 否       | 设备 ID                      |
 | action.orderId  | int      | 否       | 指令 ID                      |
 
+**请求参数示例**
+```json
+{
+    rowId:"1",
+    projectId:"1",
+    icon:"rest",
+    name:"hello",
+    action:"1,1",
+    action:"2,2"
+}
+```
 
 **响应参数**
 
