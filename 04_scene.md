@@ -69,13 +69,17 @@
 
 **响应参数**
 
-| 参数       | 参数类型 | 是否可选 | 参数说明 |
-| ---        | :---:    | ----     | ---      |
-| -          | array    | 否       | 数组     |
-| deviceName | string   | 否       | 设备名称 |
-| deviceId   | int      | 否       | 设备 ID  |
-| commandId    | int      | 否       | 指令ID   |
+| 参数         | 参数类型 | 是否可选 | 参数说明 |
+| ---          | :---:    | ----     | ---      |
+| -            | array    | 否       | 数组     |
+| deviceId     | int      | 否       | 设备 ID  |
+| deviceName   | string   | 否       | 设备名称 |
+| channelId    | int      | 否       | 通道 ID  |
+| channelName  | string   | 否       | 通道名称 |
+| channelNum   | string   | 否       | 通道号   |
 | commandName  | string   | 否       | 指令名称 |
+| commandValue | string   | 否       | 指令值   |
+
 
 
 **响应示例**
@@ -84,14 +88,20 @@
 [
   {
     deviceId:1,
-    deviceName:"空调",
-    commandId:11,
-    commandName:"启动"
+    deviceName:"开关",
+    channelId:1,
+    channelNum:"1",
+    channelName:"通道1",
+    commandValue:"1",
+    commandName:"打开"
   }，{
     deviceId:1,
-    deviceName:"空调",
-    commandId:12,
-    commandName:"制热模式"
+    deviceName:"开关",
+    channelId:1,
+    channelNum:"1",
+    channelName:"通道2",
+    commandValue:"1",
+    commandName:"关闭"
   }
 ]
 ```
@@ -106,15 +116,16 @@
 
 **请求参数**
 
-|       参数      | 参数类型 | 是否可选 |           参数说明           |
-|-----------------|----------|----------|------------------------------|
-| rowId           | int      | 是       | 场景ID，编辑时有，新增时没有 |
-| projectId       | int      | 否       | 项目 ID                      |
-| icon            | string   | 是       | 场景图标编码                 |
-| name            | string   | 是       | 场景名称                     |
-| action          | array    | 否       | 场景动作                     |
-| action.deviceId | int      | 否       | 设备 ID                      |
-| action.orderId  | int      | 否       | 指令 ID                      |
+|         参数        | 参数类型 | 是否可选 |           参数说明           |
+|---------------------|----------|----------|------------------------------|
+| rowId               | int      | 是       | 场景ID，编辑时有，新增时没有 |
+| projectId           | int      | 否       | 项目 ID                      |
+| icon                | string   | 是       | 场景图标编码                 |
+| name                | string   | 是       | 场景名称                     |
+| action              | array    | 否       | 场景动作                     |
+| action.deviceId     | int      | 否       | 设备 ID                      |
+| action.channelNum   | int      | 否       | 通道 号                      |
+| action.commandValue | string   | 否       | 指令值                       |
 
 **请求参数示例**
 ```json
@@ -123,8 +134,10 @@
     projectId:"1",
     icon:"rest",
     name:"hello",
-    action:"1,1",
-    action:"2,2"
+    action:[
+        "deviceId:1,channelNum:1,commandValue:1",
+        "deviceId:1,channelNum:1,commandValue:1"
+    ]
 }
 ```
 
