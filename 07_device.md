@@ -92,17 +92,23 @@
 
 **请求参数**
 
-|     参数    | 是否可选 | 参数说明 |
-|-------------|----------|----------|
-| modelId | 否       |  设备型号ID |
+|   参数  | 是否可选 |  参数说明  |
+|---------|----------|------------|
+| modelId | 否       | 设备型号ID |
 
 **响应参数**
 
-| 参数      | 参数类型 | 是否可选 | 参数说明 |
-| ---       | :---:    | ----     | ---      |
-| -         | array    | 否       | 指令集合 |
-| rowId     | int      | 否       | 指令 ID  |
-| commandName | string   | 否       | 指令名称 |
+| 参数                 | 参数类型 | 是否可选 | 参数说明 |
+| ---                  | :---:    | ----     | ---      |
+| -                    | array    | 否       | 通道     |
+| rowId                | int      | 否       | 通道 ID  |
+| number               | int      | 否       | 通道号   |
+| name                 | string   | 否       | 通道名称   |
+| command              | array    | 否       | 指令集合 |
+| command.commandId    | int      | 否       | 指令 ID  |
+| command.commandName  | string   | 否       | 指令名称 |
+| command.commandValue | string   | 否       | 指令值   |
+
 
 
 **响应示例**
@@ -110,11 +116,33 @@
 ```json
 [
     {
-      rowId:1,
-      commandName:"启动"
-    },{
-      rowId:2,
-      commandName:"制热模式"
+        rowId: 1, 
+        number: 1, 
+        name:"开关"
+        command: [
+            {
+                commandId: 1, 
+                commandName: "启动", 
+                commandValue: 1
+            }, 
+            {
+                commandId: 1, 
+                commandName: "启动", 
+                commandValue: 1
+            }
+        ]
+    }, 
+    {
+        rowId: 2, 
+        number: 1, 
+        name:"空调"
+        command: [
+            {
+                commandId: 1, 
+                commandName: "启动", 
+                commandValue: 1
+            }
+        ]
     }
 ]
 ```
