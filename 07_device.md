@@ -172,7 +172,7 @@
 | roomName    | string   | 否       | 所属房间                                     |
 | status      | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
 | model       | string   | 否       | 设备型号                                     |
-| is_favorite | int      | 否       | 是否常用设备 0：否 1：是                     |
+| isFavorite | int      | 否       | 是否常用设备 0：否 1：是                     |
 
 ** 响应示例 **
 
@@ -184,7 +184,7 @@
   roomName: "房间一",
   status: 0,
   model:"kdkg-1000",
-  is_favorite:0
+  isFavorite:0
 }]
 ```
 
