@@ -124,7 +124,11 @@
 | name                | string   | 是       | 场景名称                     |
 | action              | array    | 否       | 场景动作                     |
 | action.deviceId     | int      | 否       | 设备 ID                      |
-| action.channelNum   | int      | 否       | 通道 号                      |
+| action.deviceName   | string   | 否       | 设备名称                     |
+| action.channelId    | int      | 否       | 通道 ID                      |
+| action.channelName  | string   | 否       | 通道名称                     |
+| action.channelNum   | string   | 否       | 通道号                       |
+| action.commandName  | string   | 否       | 指令名称                     |
 | action.commandValue | string   | 否       | 指令值                       |
 
 **请求参数示例**
@@ -135,8 +139,7 @@
     icon:"rest",
     name:"hello",
     action:[
-        "deviceId:1,channelNum:1,commandValue:1",
-        "deviceId:1,channelNum:1,commandValue:1"
+    "{deviceId:1,deviceName:"开关",channelNum:"1",channelName:"通道2",commandValue:"1",commandName:"关闭"}"
     ]
 }
 ```
