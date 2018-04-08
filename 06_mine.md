@@ -158,7 +158,7 @@
 | device.name          | string   | 否       | 设备名称                                     |
 | device.roomName      | string   | 否       | 所属房间                                     |
 | device.icon          | string   | 否       | 设备图标                                     |
-| device.status        | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
+| device.status        | int      | 否       | 设备状态 0：设备离线 1：设备在线 2：设备故障 |
 | device.model         | string   | 否       | 设备型号                                     |
 
 
