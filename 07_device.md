@@ -23,7 +23,7 @@
 | name     | string   | 否       | 设备名称                                     |
 | icon     | string   | 否       | 设备图标                                     |
 | roomName | string   | 否       | 所属房间                                     |
-| status   | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
+| status   | int      | 否       | 设备状态 0：设备离线 1：设备在线 2：设备故障 |
 | deviceModel    | string   | 否       | 设备型号                                     |
 | deviceModelId  | int      | 否       | 设备型号 ID                                             |
 
@@ -170,7 +170,7 @@
 | name        | string   | 否       | 设备名称                                     |
 | icon        | string   | 否       | 设备图标                                     |
 | roomName    | string   | 否       | 所属房间                                     |
-| status      | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
+| status      | int      | 否       | 设备状态 0：设备离线 1：设备在线 2：设备故障 |
 | model       | string   | 否       | 设备型号                                     |
 | isFavorite | int      | 否       | 是否常用设备 0：否 1：是                     |
 
@@ -239,7 +239,7 @@
 | device.name          | string   | 否       | 设备名称                                     |
 | device.icon          | string   | 否       | 设备图标                                     |
 | device.roomName      | string   | 否       | 所属房间                                     |
-| device.status        | int      | 否       | 设备状态 0：设备在线 1：设备离线 2：设备故障 |
+| device.status        | int      | 否       | 设备状态 0：设备离线 1：设备在线 2：设备故障 |
 | device.workingMode   | string   | 否       | 设备当前工作模式，仅当设备在线时有值         |
 | device.workingStatus | string   | 否       | 设备当前工作状态，仅当设备在线时有值         |
 | device.model         | string   | 否       | 设备型号                                     |

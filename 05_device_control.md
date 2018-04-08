@@ -25,10 +25,10 @@
 | channelInfo.channelValue  | string   | 否       | 通道值                                                                                            |
 | channelInfo.channelStatus | string   | 否       | 通道状态                                                                                          |
 | channelInfo.channelIcon   | string   | 否       | 通道图标                                                                                          |
-| channelInfo.commandType   | string   | 否       | 指令类型：Default，Palette，GetPower，Zigbee_485                                                  |
-| channelInfo.zigbeeType    | string   | 是       | 表示红外设备功能键类型，只有当commandType为`Zigbee_485`时有效；识别功能键，放在界面的哪个区域  。 |
+| channelInfo.commandType   | string   | 否       | 指令类型：Default，Palette，GetPower，Zigbee_485，Infrared                                                  |
+| channelInfo.zigbeeType    | string   | 是       | 表示红外设备功能键类型，只有当commandType为`Infrared`时有效；识别功能键，放在界面的哪个区域  。 |
 | command                   | array    | 否       | 指令定义                                                                                          |
-| command.type              | string   | 否       | 指令类型：Default，Palette，GetPower，Zigbee_485                                                  |
+| command.type              | string   | 否       | 指令类型：Default，Palette，GetPower，Zigbee_485，Infrared                                                  |
 | command.value             | string   | 否       | 指令值                                                                                            |
 
 
@@ -40,8 +40,9 @@
 |------------|----------------------------------|
 | Default    | 默认（包括开关设备，指示牌显示） |
 | Palette    | 调节灯光色彩                     |
-| GetPower   | 获取电量 ，插座设备                        |
-| Zigbee_485 | Zigbee透传,红外设备                       |
+| GetPower   | 获取电量 ，计量插座设备          |
+| Zigbee_485 | Zigbee透传                       |
+| Infrared   | 红外设备                         |
 
 
 ** 指令值说明 **
@@ -112,8 +113,9 @@
 |------------|----------------------------------|
 | Default    | 默认（包括开关设备，指示牌显示） |
 | Palette    | 调节灯光色彩                     |
-| GetPower   | 获取电量 ，插座设备                        |
-| Zigbee_485 | Zigbee透传,红外设备                       |
+| GetPower   | 获取电量 ，计量插座设备          |
+| Zigbee_485 | Zigbee透传                       |
+| Infrared   | 红外设备                         |
 
 ** channelNum字段值解释：**
 
