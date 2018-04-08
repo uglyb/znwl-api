@@ -9,6 +9,8 @@
     - [设备](/07_device)
     - [设备控制](/05_device_control)
     - [个人中心](/06_mine)
-  - [附录](/appendix)
+  - [消息透传](/appendix)
+  - [设备payload](/appendix2)
+  - [设备类型对应表](/appendix3)
   - Change log
 - 菜单定义

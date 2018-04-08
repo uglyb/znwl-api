@@ -15,6 +15,8 @@
 |                  |          | deviceData.channelNumber | string | 通道     |
 |                  |          | deviceData.channelValue  | string | 通道值   |
 |                  |          | deviceData.channelStatus | string | 通道状态 |
+|                  |          | payload                  | string | 携带参数 |
+
 
 ** 固定字段 **
 
@@ -67,7 +69,8 @@
             channelStatus :"10"
  
         }
-    ]
+    ],
+    payload:"[{date:10-20,value:50},{date:10-21,value:40}]"
 }
 
 ```
